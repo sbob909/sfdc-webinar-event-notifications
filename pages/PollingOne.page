@@ -1,0 +1,15 @@
+<apex:page showHeader="true" controller="leadListController" tabstyle="lead" sidebar="false">
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageBlockTable id="leadList" value="{!leads}" var="l">
+        <apex:column headerValue="Name">
+          <apex:outputLink value="/{!l.id}">{!l.Name}</apex:outputLink>
+        </apex:column>
+        <apex:column value="{!l.state}"/>
+        <apex:column value="{!l.company}"/>
+        <apex:column value="{!l.email}"/>
+      </apex:pageBlockTable>
+      <apex:actionPoller action="{!pollAction}" reRender="leadList" interval="15"/>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
