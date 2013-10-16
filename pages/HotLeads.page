@@ -41,6 +41,7 @@ function updateHotLeads(updates) {
 		}
 		console.log(new_hotLeads);
 		hotLeads = new_hotLeads;
+		
 	}
 	
 	console.log(hotLeads);
